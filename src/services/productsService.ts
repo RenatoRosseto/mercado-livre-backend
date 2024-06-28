@@ -12,7 +12,7 @@ export const searchProducts = async (query: string) => {
     price: {
       currency: product.currency_id,
       amount: Math.floor(product.price),
-      decimals: +(product.price % 1).toFixed(2) * 100,
+      decimals: Math.round((product.price % 1) * 100),
     },
     picture_url: product.thumbnail,
     condition: product.condition,

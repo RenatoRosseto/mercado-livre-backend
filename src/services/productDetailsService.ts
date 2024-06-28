@@ -40,7 +40,7 @@ export const getProductDetails = async (
     price: {
       currency: product.currency_id,
       amount: Math.floor(product.price),
-      decimals: +(product.price % 1).toFixed(2) * 100,
+      decimals: Math.round((product.price % 1) * 100),
     },
     picture_url: product.pictures[0].url,
     condition: getConditionText(product.condition),
